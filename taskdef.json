@@ -1,0 +1,24 @@
+{
+    "executionRoleArn": "arn:aws:iam::737765943880:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "test-service-api",
+            "image": "<IMAGE1_NAME>",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 8081,
+                    "protocol": "tcp",
+                    "containerPort": 8081
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "512",
+    "memory": "1024",
+    "family": "stage-service-api-fargate"
+}
